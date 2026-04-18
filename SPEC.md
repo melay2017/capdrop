@@ -164,11 +164,11 @@ capdrop/
 
 | 阶段 | 内容 | 预计时间 | 状态 | 验收标准 |
 |------|------|----------|------|----------|
-| M0 | Tauri 2 环境搭建 + Hello World | 1天 | ⏳ | `cargo tauri dev` 可运行，Mac Mini 环境 OK |
-| M1 | 截图核心（快捷键 + 选区 + 捕获） | 3天 | ⏳ | 全局快捷键触发截图，可拖拽/点击选区，截图保存到本地 |
-| M2 | 标注编辑器 | 3天 | ⏳ | 画笔/箭头/矩形/文字/马赛克全部可用，撤销/重做 OK |
-| M3 | 自动保存（Markdown + 剪贴板 + 配置界面） | 2天 | ⏳ | 截图确认后自动保存到预设位置，Markdown 引用正确 |
-| M4 | 打包发布 + Windows CI | 2天 | ⏳ | 单文件 .exe < 20MB，GitHub Actions 自动构建 |
+| M0 | Tauri 2 环境搭建 + Hello World | 1天 | ✅ | cargo tauri dev 可运行，Mac Mini 环境 OK |
+| M1 | 截图核心（快捷键 + 选区 + 捕获） | 3天 | ✅ | macOS screencapture 集成，全局快捷键 Alt+Shift+S |
+| M2 | 标注编辑器 | 3天 | ✅ | Canvas API: 画笔/箭头/矩形/圆形/文字/马赛克，撤销/重做 |
+| M3 | 自动保存（Markdown + 剪贴板 + 配置界面） | 2天 | ✅ | 剪贴板(osascript) + 本地PNG + Markdown引用，设置面板 |
+| M4 | 打包发布 + Windows CI | 2天 | ✅ | DMG 4.2MB，CI/CD Windows+macOS 双平台 |
 
 ## 6. 失败经验总结（来自之前尝试）
 

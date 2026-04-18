@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CapDrop</title>
+    <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+    <div id="app">
+        <!-- Main view: capture + edit -->
+        <div id="main-view" class="hidden">
+            <!-- Toolbar -->
+            <div id="toolbar">
+                <div class="tool-group">
+                    <button class="tool-btn active" data-tool="select" title="Select">&#x271A;</button>
+                    <button class="tool-btn" data-tool="pen" title="Pen">&#x270E;</button>
+                    <button class="tool-btn" data-tool="arrow" title="Arrow">&#x2192;</button>
+                    <button class="tool-btn" data-tool="rect" title="Rectangle">&#x25A1;</button>
+                    <button class="tool-btn" data-tool="circle" title="Circle">&#x25CB;</button>
+                    <button class="tool-btn" data-tool="text" title="Text">T</button>
+                    <button class="tool-btn" data-tool="mosaic" title="Mosaic">&#x2592;</button>
+                </div>
+                <div class="tool-group">
+                    <input type="color" id="color-picker" value="#FF0000" title="Color" />
+                    <select id="pen-size" title="Pen Size">
+                        <option value="2">Thin</option>
+                        <option value="4" selected>Medium</option>
+                        <option value="8">Thick</option>
+                    </select>
+                </div>
+                <div class="tool-group">
+                    <button id="undo-btn" title="Undo">&#x21A9;</button>
+                    <button id="redo-btn" title="Redo">&#x21AA;</button>
+                </div>
+                <div class="tool-group spacer"></div>
+                <div class="tool-group">
+                    <button id="save-btn" class="primary" title="Save (Ctrl+S)">&#x2713; Save</button>
+                    <button id="cancel-btn" title="Cancel (Esc)">&#x2717;</button>
+                </div>
+            </div>
+
+            <!-- Canvas area -->
+            <div id="canvas-container">
+                <canvas id="screenshot-canvas"></canvas>
+                <canvas id="annotation-canvas"></canvas>
+            </div>
+        </div>
+
+        <!-- Settings panel (toggled via tray) -->
+        <div id="settings-view" class="hidden">
+            <h2>Settings</h2>
+            <div class="setting-row">
+                <label>Hotkey:</label>
+                <input id="setting-hotkey" type="text" />
+            </div>
+            <div class="setting-row">
+                <label>Save Path:</label>
+                <input id="setting-savepath" type="text" />
+            </div>
+            <div class="setting-row">
+                <label>Filename Template:</label>
+                <input id="setting-filename" type="text" />
+            </div>
+            <div class="setting-row">
+                <label>Markdown Path:</label>
+                <input id="setting-mdpath" type="text" placeholder="Optional" />
+            </div>
+            <div class="setting-row">
+                <label>Auto Clipboard:</label>
+                <input id="setting-clipboard" type="checkbox" checked />
+            </div>
+            <div class="setting-row">
+                <label>Auto Local Save:</label>
+                <input id="setting-local" type="checkbox" checked />
+            </div>
+            <div class="setting-row actions">
+                <button id="save-settings-btn">Save</button>
+                <button id="close-settings-btn">Close</button>
+            </div>
+        </div>
+
+        <!-- Status bar -->
+        <div id="status-bar">
+            <span id="status-text">Ready</span>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

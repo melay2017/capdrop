@@ -1,0 +1,15 @@
+{
+  "name": "capdrop",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev:frontend": "echo 'Static frontend, no dev server needed'",
+    "build:frontend": "echo 'Static frontend, no build needed'",
+    "tauri": "tauri",
+    "dev": "cargo tauri dev",
+    "build": "cargo tauri build"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2"
+  }
+}

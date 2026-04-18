@@ -1,5 +1,7 @@
 #[cfg(target_os = "macos")]
 pub mod macos;
+#[cfg(target_os = "windows")]
+pub mod windows;
 
 pub struct Screenshot {
     pub data: Vec<u8>,

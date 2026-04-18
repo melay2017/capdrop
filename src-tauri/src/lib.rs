@@ -22,7 +22,7 @@ fn capture_fullscreen() -> Result<String, String> {
     }
     #[cfg(target_os = "windows")]
     {
-        Err("Windows capture not yet implemented".into())
+        capture::windows::capture_screen()
     }
     #[cfg(not(any(target_os = "macos", target_os = "windows")))]
     {
@@ -39,8 +39,7 @@ fn capture_region(x: u32, y: u32, w: u32, h: u32) -> Result<String, String> {
     }
     #[cfg(target_os = "windows")]
     {
-        let _ = (x, y, w, h);
-        Err("Windows capture not yet implemented".into())
+        capture::windows::capture_region_b64(x, y, w, h)
     }
     #[cfg(not(any(target_os = "macos", target_os = "windows")))]
     {
